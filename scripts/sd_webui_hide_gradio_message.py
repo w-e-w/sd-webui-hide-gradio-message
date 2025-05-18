@@ -1,5 +1,6 @@
 try:
     from modules import patches, script_callbacks
+    from datetime import datetime
     from tqdm import tqdm
     import gradio.helpers
     import warnings
@@ -7,7 +8,7 @@ try:
 
     def log_message(message: str, level="info", *args, **kwargs):
         try:
-            tqdm.write(f'{str(level).capitalize()}: {message}')
+            tqdm.write(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S,%f")} - Gradio - {str(level).upper()} - {message}')
         except Exception:
             pass
 
