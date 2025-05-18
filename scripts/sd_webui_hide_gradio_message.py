@@ -1,14 +1,15 @@
 try:
     from modules import patches, script_callbacks
+    from tqdm import tqdm
     import gradio.helpers
     import warnings
 
 
     def log_message(message: str, level="info", *args, **kwargs):
-        if level == "info":
-            print(message)
-        elif level == "warning":
-            warnings.warn(message)
+        try:
+            tqdm.write(f'{str(level).capitalize()}: {message}')
+        except Exception:
+            pass
 
 
     original_log_message = patches.patch(__name__, gradio.helpers, 'log_message', log_message)
