@@ -9,3 +9,10 @@ Some people don't like the gradio message appearing on the web page, so this ext
 message like this:
 
 ![img1](screenshot/img1.png)
+
+## Installation
+Install this extension by using `Extensions` > `Install from URL` tab.
+```
+https://github.com/w-e-w/sd-webui-hide-gradio-message.git
+```
+![img1](screenshot/img2.png)
