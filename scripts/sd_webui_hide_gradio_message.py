@@ -17,7 +17,10 @@ try:
 
 
     def undo():
-        patches.undo(__name__, gradio.helpers, 'log_message')
+        try:
+            patches.undo(__name__, gradio.helpers, 'log_message')
+        except RuntimeError:
+            pass
 
 
     script_callbacks.on_script_unloaded(undo)
